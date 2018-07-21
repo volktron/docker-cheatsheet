@@ -24,7 +24,13 @@ By default will be on the same docker network
 
 ## Docker Swarm
 
-_TODO_
+Intro: https://www.youtube.com/watch?v=KC4Ad1DS8xU
+
+### Setting up first manager
+* Run `docker swarm init` on first machine to create manager (https://docs.docker.com/engine/reference/commandline/swarm_init/)
+* Run `docker swarm join <ipaddress>` on subsequent machines to join swarm as worker (https://docs.docker.com/engine/reference/commandline/swarm_join/)
+
+### Compose
 
 ## Debugging
 
