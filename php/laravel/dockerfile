@@ -1,0 +1,21 @@
+# Get alpine+php7.2 image
+FROM phpearth/php:latest
+
+ADD https://php.codecasts.rocks/php-alpine.rsa.pub /etc/apk/keys/php-alpine.rsa.pub
+RUN apk --update add ca-certificates
+RUN echo "@php https://php.codecasts.rocks/v3.7/php-7.2" >> /etc/apk/repositories
+
+# Install extensions
+RUN apk add php-dom php-json php-mbstring php-openssl php-phar php-pdo php-session php-tokenizer php-xmlwriter php-xml php-zip php-zlib
+RUN apk add composer
+
+# Copy repo to /var/www in the container
+ADD . /var/www
+WORKDIR /var/www
+RUN composer install
+
+# Expose port 80 to outside world
+EXPOSE 80
+
+# Run artisan serve and expose to outside world
+CMD ["/var/www/artisan", "serve", "--port", "80", "--host", "0.0.0.0"]
