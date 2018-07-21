@@ -22,7 +22,7 @@ By default will be on the same docker network
 
 ```docker-compose up```
 
-docker_compose.yml file format https://docs.docker.com/compose/compose-file/#args
+docker_compose.yml file format: https://docs.docker.com/compose/compose-file/#args
 
 ## Docker Swarm
 
