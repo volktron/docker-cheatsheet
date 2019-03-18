@@ -42,3 +42,6 @@ Container probably doesn’t have the right port(s) exposed
 
 ### “Connection reset”
 Dockerized application isn’t serving externally
+
+### Mounted volume is empty (Windows)
+Try refreshing credentials.
